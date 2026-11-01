@@ -1,0 +1,1 @@
+from .sensores import limpiar_registro_sensor, generar_resumen_sensores

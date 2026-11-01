@@ -1,0 +1,36 @@
+[
+    {
+        "tipo": "DispositivoEcologico",
+        "producto_id": "ECO-001",
+        "nombre": "Bomba de agua solar",
+        "precio": 250000,
+        "stock": 10
+    },
+    {
+        "tipo": "DispositivoEcologico",
+        "producto_id": "ECO-002",
+        "nombre": "Termotanque solar",
+        "precio": 480000,
+        "stock": 3
+    },
+    {
+        "tipo": "PanelSolar",
+        "producto_id": "ECO-003",
+        "nombre": "Panel Solar Mono 450W",
+        "precio": 890000,
+        "stock": 5,
+        "potencia_watts": 450,
+        "eficiencia_porcentaje": 21.5,
+        "garantia_anios": 10
+    },
+    {
+        "tipo": "PanelSolar",
+        "producto_id": "ECO-004",
+        "nombre": "Panel Solar Poly 330W",
+        "precio": 520000,
+        "stock": 8,
+        "potencia_watts": 330,
+        "eficiencia_porcentaje": 17.8,
+        "garantia_anios": 5
+    }
+]
