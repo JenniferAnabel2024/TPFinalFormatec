@@ -1,12 +1,6 @@
-"""Bloque de prueba del Ejercicio 3.
-
-Simula la tubería de datos: registros de consumo -> obtener_metricas_consumo
--> contexto que vista_panel_sustentabilidad entrega a panel.html.
-"""
-
 from servicios.metricas import obtener_metricas_consumo
 
-# Historial de consumos por planta (en producción vendría de la ETL/BD)
+
 registros = [
     {"planta": "Planta Norte", "consumo_kwh": 12500},
     {"planta": "Planta Sur", "consumo_kwh": 9800},

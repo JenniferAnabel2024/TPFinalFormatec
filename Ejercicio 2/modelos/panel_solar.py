@@ -1,10 +1,7 @@
-"""Punto A: producto especializado del catálogo."""
-
 from .dispositivo_ecologico import DispositivoEcologico
 
 
 class PanelSolar(DispositivoEcologico):
-    """Hereda de DispositivoEcologico e incorpora sus atributos propios."""
 
     def __init__(self, producto_id, nombre, precio, stock,
                  potencia_watts, eficiencia_porcentaje, garantia_anios):
@@ -14,7 +11,6 @@ class PanelSolar(DispositivoEcologico):
         self.garantia_anios = garantia_anios
 
     def ficha_tecnica(self):
-        """Polimorfismo: personaliza la ficha técnica comercial."""
         return (
             f"{super().ficha_tecnica()} | "
             f"Potencia: {self.potencia_watts} W | "

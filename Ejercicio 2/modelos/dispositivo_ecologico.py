@@ -1,20 +1,13 @@
-"""Punto A: clase base del dominio del catálogo."""
-
 from excepciones import StockInvalidoError
 
 
 class DispositivoEcologico:
-    """Clase base del catálogo.
-
-    El stock se encapsula de forma explícita: toda asignación pasa por
-    el setter, que impide valores negativos lanzando StockInvalidoError.
-    """
 
     def __init__(self, producto_id, nombre, precio, stock=0):
-        self.producto_id = producto_id  # identificador del producto
+        self.producto_id = producto_id
         self.nombre = nombre
         self.precio = precio
-        self.stock = stock  # pasa por el setter validador
+        self.stock = stock
 
     @property
     def stock(self):
@@ -30,7 +23,6 @@ class DispositivoEcologico:
         self.__stock = valor
 
     def ficha_tecnica(self):
-        """Ficha comercial base; las subclases la personalizan."""
         return (
             f"[{self.producto_id}] {self.nombre} | "
             f"${self.precio:,.0f} | Stock: {self.stock}"

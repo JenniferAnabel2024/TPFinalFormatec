@@ -1,5 +1,3 @@
-"""Configuración mínima del proyecto web de EcoTech Solutions."""
-
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent

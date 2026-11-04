@@ -1,5 +1,3 @@
-"""Rutas del proyecto web de EcoTech Solutions."""
-
 from django.urls import path
 
 from sustentabilidad.views import vista_panel_sustentabilidad

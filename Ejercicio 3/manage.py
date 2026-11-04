@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-"""Utilidad de administración del proyecto Django."""
 import os
 import sys
 

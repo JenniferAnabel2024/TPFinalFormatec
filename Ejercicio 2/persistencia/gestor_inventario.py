@@ -1,10 +1,7 @@
-"""Punto B: persistencia y gestión del catálogo."""
-
 import json
 
 
 class GestorInventario:
-    """Exporta las instancias del catálogo a un archivo JSON."""
 
     @staticmethod
     def guardar_catalogo_json(lista_dispositivos, ruta_archivo):
