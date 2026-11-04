@@ -11,16 +11,17 @@ registros_crudos = [
     {"sensor_id": " SENSOR-005", "temperatura": "22.9C", "ubicacion": "Bodega Central"},
 ]
 
-
+# limpiar_registro_sensor: saca espacios vacios lo de los costados, la temperatura la convierte en numero y en ubicacion coloca 
+#sin ubicacion para que no quede vacio. 
 def main():
 
     sensores_limpios = [limpiar_registro_sensor(r) for r in registros_crudos]
-
+                       #Nace la lista
     print("=== REGISTROS NORMALIZADOS ===")
     for s in sensores_limpios:
         print(f"  {s['sensor_id']} | {s['temperatura']} °C | {s['ubicacion']}")
 
-
+#UMbRAL TEMPERATURA VA EN MAYUSCULA ES UNA CONSTANTE POR ESO..
     alertas, promedio = generar_resumen_sensores(sensores_limpios, UMBRAL_TEMPERATURA)
 
     print("\n=== REPORTE FINAL ===")
