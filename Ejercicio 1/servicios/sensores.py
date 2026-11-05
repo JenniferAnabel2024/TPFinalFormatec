@@ -6,13 +6,17 @@ UBICACION_POR_DEFECTO = "Sin ubicación"
 def limpiar_registro_sensor(registro_raw):
     sensor_id = str(registro_raw.get("sensor_id", "")).strip()
 
-    temperatura_raw = registro_raw.get("temperatura", 0)
+    temperatura_raw = registro_raw.get("temperatura")
     if isinstance(temperatura_raw, (int, float)):
         temperatura = float(temperatura_raw)
     else:
-
         coincidencia = re.search(r"-?\d+(?:\.\d+)?", str(temperatura_raw))
-        temperatura = float(coincidencia.group()) if coincidencia else 0.0
+        if not coincidencia:
+            raise ValueError(
+                f"La temperatura ingresada ({temperatura_raw}) "
+                "no contiene valor numérico"
+            )
+        temperatura = float(coincidencia.group())
 
     ubicacion_raw = registro_raw.get("ubicacion")
     if ubicacion_raw is None or not str(ubicacion_raw).strip():

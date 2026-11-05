@@ -24,6 +24,9 @@ try:
 except excepciones.StockInvalidoError as e:
     print("Excepción capturada:", e)
 
+print(f"Stock de {dispositivo_1.nombre} sigue en: "
+      f"{dispositivo_1.stock} (no cambió)")
+
 try:
     panel_malo = modelos.PanelSolar(
         "ECO-005", "Panel defectuoso", 100000, -1, 100, 10, 1)

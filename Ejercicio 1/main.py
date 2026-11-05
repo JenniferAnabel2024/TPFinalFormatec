@@ -9,14 +9,19 @@ registros_crudos = [
     {"sensor_id": "  SENSOR-003 ", "temperatura": 27.8, "ubicacion": ""},
     {"sensor_id": "SENSOR-004", "temperatura": "35C", "ubicacion": None},
     {"sensor_id": " SENSOR-005", "temperatura": "22.9C", "ubicacion": "Bodega Central"},
+    {"sensor_id": "SENSOR-099", "temperatura": "ERROR", "ubicacion": "Prueba"},
 ]
 
 # limpiar_registro_sensor: saca espacios vacios lo de los costados, la temperatura la convierte en numero y en ubicacion coloca 
 #sin ubicacion para que no quede vacio. 
 def main():
 
-    sensores_limpios = [limpiar_registro_sensor(r) for r in registros_crudos]
-                       #Nace la lista
+    sensores_limpios = []          #Nace la lista
+    for r in registros_crudos:
+        try:
+            sensores_limpios.append(limpiar_registro_sensor(r))
+        except ValueError as e:
+            print(f"  Registro descartado: {e}")
     print("=== REGISTROS NORMALIZADOS ===")
     for s in sensores_limpios:
         print(f"  {s['sensor_id']} | {s['temperatura']} °C | {s['ubicacion']}")
